@@ -1,1 +1,76 @@
 [hidden] { display: none !important; }
+
+/* Brand assets */
+.brand-image { height: 48px; min-width: 180px; overflow: hidden; }
+.brand-image img { display: block; width: 190px; height: 64px; object-fit: contain; object-position: left center; }
+.site-header .brand-image { margin-left: -5px; }
+.site-header nav { gap: 26px; }
+.footer-brand { height: 58px; }
+.footer-brand img { width: 220px; height: 74px; }
+.pick-icon { overflow: hidden; padding: 0; background: transparent; box-shadow: 0 0 45px #ffb31b45; }
+.pick-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.access-brand-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .11; mix-blend-mode: screen; pointer-events: none; }
+
+/* Product showcase */
+.showcase { max-width: 1320px; padding-top: 105px; }
+.showcase-heading { display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px; align-items: end; margin-bottom: 48px; }
+.showcase-heading h2 { max-width: 760px; margin-bottom: 0; }
+.showcase-heading > p { color: var(--muted); font-size: 13px; line-height: 1.9; margin: 0 0 10px; }
+.product-carousel { padding: 18px; border: 1px solid #34303a; border-radius: 20px; background: linear-gradient(145deg,#15131b,#0c0b10); box-shadow: 0 40px 100px #0008; position: relative; overflow: hidden; }
+.product-carousel::before { content: ""; position: absolute; width: 440px; height: 440px; border-radius: 50%; right: -180px; top: -210px; background: #ffae1d12; filter: blur(20px); pointer-events: none; }
+.carousel-topline { display: flex; align-items: center; justify-content: space-between; min-height: 48px; padding: 0 4px 14px 8px; }
+.carousel-kicker { color: #7f7885; font: 600 9px var(--display); letter-spacing: 2px; }
+.carousel-kicker span { color: var(--gold); font-size: 14px; }
+.carousel-controls { display: flex; gap: 8px; }
+.carousel-controls button { width: 38px; height: 38px; border: 1px solid #403943; border-radius: 50%; background: #1b1820; color: #e8dfea; cursor: pointer; transition: .2s; }
+.carousel-controls button:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.carousel-viewport { overflow: hidden; border: 1px solid #3b3540; border-radius: 13px; background: #0d0c12; outline: none; }
+.carousel-viewport:focus-visible { box-shadow: 0 0 0 3px #ffb31b38; }
+.carousel-track { display: flex; transition: transform .58s cubic-bezier(.22,.75,.25,1); will-change: transform; }
+.carousel-slide { min-width: 100%; margin: 0; aspect-ratio: 1900 / 855; overflow: hidden; position: relative; }
+.carousel-slide::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 80px #0007; pointer-events: none; }
+.carousel-slide img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.carousel-bottom { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; padding: 24px 9px 8px; }
+.carousel-copy h3 { font-size: 18px; margin: 0 0 7px; }
+.carousel-copy p { color: #8f8795; font-size: 10px; line-height: 1.7; margin: 0; }
+.carousel-dots { display: flex; align-items: center; gap: 7px; padding-bottom: 5px; }
+.carousel-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 20px; background: #4a444e; cursor: pointer; transition: .25s; }
+.carousel-dots button.active { width: 28px; background: var(--gold); }
+.carousel-dots button:focus-visible,.carousel-controls button:focus-visible,.button:focus-visible,.menu-button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* General polish and bug fixes */
+img { max-width: 100%; }
+.experience-card,.problem-card,.adaptive-demo,.for-you-panel,.access-card { isolation: isolate; }
+.site-header { transition: top .3s,background .3s,border-color .3s,border-radius .3s,box-shadow .3s; }
+.faq-list summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; border-radius: 3px; }
+.carousel-slide img,.brand-image img,.access-brand-art,.pick-icon img { user-select: none; -webkit-user-drag: none; }
+
+@media (max-width: 1050px) {
+  .brand-image { min-width: 158px; }
+  .brand-image img { width: 170px; }
+  .site-header nav { gap: 16px; }
+  .showcase-heading { grid-template-columns: 1fr; gap: 18px; }
+  .showcase-heading > p { max-width: 720px; }
+}
+
+@media (max-width: 760px) {
+  .brand-image { height: 42px; min-width: 145px; }
+  .brand-image img { width: 154px; height: 52px; }
+  .site-header.menu-open { background: #0e0d13f5; border-color: #ffffff12; }
+  .showcase { padding-top: 75px; }
+  .showcase-heading { margin-bottom: 30px; }
+  .product-carousel { padding: 10px; border-radius: 14px; margin-left: -8px; margin-right: -8px; }
+  .carousel-slide { aspect-ratio: 16 / 9; }
+  .carousel-slide img { object-fit: cover; object-position: center; }
+  .carousel-bottom { grid-template-columns: 1fr; gap: 18px; padding: 18px 5px 6px; }
+  .carousel-copy h3 { font-size: 15px; }
+  .carousel-dots { flex-wrap: wrap; }
+  .carousel-controls button { width: 35px; height: 35px; }
+  .footer-brand { min-width: 165px; height: 48px; }
+  .footer-brand img { width: 175px; height: 58px; }
+  .access-brand-art { opacity: .075; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { transition: none; }
+}

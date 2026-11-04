@@ -8,7 +8,7 @@
   <meta property="og:title" content="GuitarQuest — Aprenda guitarra de verdade" />
   <meta property="og:description" content="Um caminho de aprendizado que percebe seus erros, revisa no momento certo e faz você tocar de verdade." />
   <title>GuitarQuest — Aprenda guitarra de verdade</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/brand/logo-badge.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -18,12 +18,10 @@
 <body>
   <div class="noise" aria-hidden="true"></div>
   <header class="site-header" data-header>
-    <a class="brand" href="#inicio" aria-label="GuitarQuest, início">
-      <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M20.6 4.1c1.8-1.2 4-1.3 5.8-.2l1.5.9-3.2 3.1.5 2.4-2.4.5-3.1 3.2-.9-1.5c-1-1.8-.9-4 .2-5.8l1.6-2.6Z"/><path d="m19.7 11.8-9.2 9.1"/><path d="M12.6 18.8c2.7 2.7 3 6.7.7 9s-6.3 2-9-.7-3-6.7-.7-9 6.3-2 9 .7Z"/><circle cx="8.6" cy="23.1" r="2.1"/></svg></span>
-      <span>Guitar<span>Quest</span></span>
-    </a>
+    <a class="brand brand-image" href="#inicio" aria-label="GuitarQuest, início"><img src="assets/brand/logo-horizontal.png" alt="GuitarQuest" /></a>
     <nav aria-label="Navegação principal" data-nav>
       <a href="#como-funciona">Como funciona</a>
+      <a href="#produto">Produto</a>
       <a href="#experiencia">Experiência</a>
       <a href="#conteudo">Conteúdo</a>
       <a href="#faq">Dúvidas</a>
@@ -85,6 +83,43 @@
       </div>
     </section>
 
+    <section class="showcase section" id="produto">
+      <div class="showcase-heading reveal">
+        <div>
+          <div class="eyebrow"><span></span> VEJA O GUITARQUEST EM AÇÃO</div>
+          <h2>Da teoria ao instrumento. <em>Tudo no mesmo caminho.</em></h2>
+        </div>
+        <p>Explore algumas telas reais do MVP: trilhas completas, teoria aplicada, exercícios no braço, reconhecimento por microfone e revisões que voltam quando fazem diferença.</p>
+      </div>
+      <div class="product-carousel reveal" data-carousel aria-roledescription="carrossel" aria-label="Telas do GuitarQuest">
+        <div class="carousel-topline">
+          <div class="carousel-kicker"><span data-slide-number>01</span> / 08</div>
+          <div class="carousel-controls">
+            <button type="button" aria-label="Tela anterior" data-carousel-prev>←</button>
+            <button type="button" aria-label="Próxima tela" data-carousel-next>→</button>
+          </div>
+        </div>
+        <div class="carousel-viewport" data-carousel-viewport tabindex="0">
+          <div class="carousel-track" data-carousel-track>
+            <figure class="carousel-slide active" data-title="Trilhas que mostram o caminho" data-description="O aluno enxerga a jornada completa, o progresso e o próximo conteúdo a dominar."><img src="assets/screens/01-trilhas.png" alt="Tela de trilhas do GuitarQuest" fetchpriority="high" /></figure>
+            <figure class="carousel-slide" data-title="Módulos em uma sequência lógica" data-description="Cada etapa tem objetivo claro, exercícios suficientes e progressão visível."><img src="assets/screens/02-modulos.png" alt="Módulos da trilha Introdução à Teoria Musical" loading="lazy" /></figure>
+            <figure class="carousel-slide" data-title="Teoria que vira som" data-description="Conceitos curtos aparecem conectados ao braço da guitarra desde o primeiro contato."><img src="assets/screens/03-teoria-braco.png" alt="Aula de teoria com braço completo da guitarra" loading="lazy" /></figure>
+            <figure class="carousel-slide" data-title="Feedback imediato e explicável" data-description="O aluno entende o acerto, recebe a explicação e acompanha sua sequência de prática."><img src="assets/screens/04-feedback.png" alt="Exercício respondido corretamente no GuitarQuest" loading="lazy" /></figure>
+            <figure class="carousel-slide" data-title="A guitarra participa da aula" data-description="O navegador escuta notas individuais e devolve orientação sem enviar o áudio ao servidor."><img src="assets/screens/05-microfone.png" alt="Exercício com reconhecimento de nota pelo microfone" loading="lazy" /></figure>
+            <figure class="carousel-slide" data-title="Repescagem personalizada" data-description="Habilidades que precisam de reforço voltam entre conteúdos novos, com motivo e origem visíveis."><img src="assets/screens/06-repescagem.png" alt="Repescagem personalizada dentro de uma sessão" loading="lazy" /></figure>
+            <figure class="carousel-slide" data-title="Localização ativa no braço" data-description="Em vez de apenas observar diagramas, o aluno encontra a nota e recebe a resposta depois da tentativa."><img src="assets/screens/07-localizacao.png" alt="Exercício de localização de nota no braço da guitarra" loading="lazy" /></figure>
+            <figure class="carousel-slide" data-title="Toque de memória, sem pistas" data-description="O sistema pede a nota primeiro e só revela a posição após a resposta, estimulando recuperação ativa."><img src="assets/screens/08-memoria.png" alt="Exercício para tocar nota de memória" loading="lazy" /></figure>
+          </div>
+        </div>
+        <div class="carousel-bottom">
+          <div class="carousel-copy" aria-live="polite"><h3 data-carousel-title>Trilhas que mostram o caminho</h3><p data-carousel-description>O aluno enxerga a jornada completa, o progresso e o próximo conteúdo a dominar.</p></div>
+          <div class="carousel-dots" role="tablist" aria-label="Escolher tela">
+            <button class="active" role="tab" aria-selected="true" aria-label="Tela 1" data-carousel-dot="0"></button><button role="tab" aria-selected="false" aria-label="Tela 2" data-carousel-dot="1"></button><button role="tab" aria-selected="false" aria-label="Tela 3" data-carousel-dot="2"></button><button role="tab" aria-selected="false" aria-label="Tela 4" data-carousel-dot="3"></button><button role="tab" aria-selected="false" aria-label="Tela 5" data-carousel-dot="4"></button><button role="tab" aria-selected="false" aria-label="Tela 6" data-carousel-dot="5"></button><button role="tab" aria-selected="false" aria-label="Tela 7" data-carousel-dot="6"></button><button role="tab" aria-selected="false" aria-label="Tela 8" data-carousel-dot="7"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="adaptive section" id="experiencia">
       <div class="adaptive-copy reveal">
         <div class="eyebrow"><span></span> UMA JORNADA QUE SE AJUSTA</div>
@@ -139,8 +174,9 @@
 
     <section class="access section" id="acesso">
       <div class="access-card reveal">
+        <img class="access-brand-art" src="assets/brand/logo-glow.png" alt="" aria-hidden="true" loading="lazy" />
         <div class="access-light"></div>
-        <div class="pick-icon">♩</div>
+        <div class="pick-icon"><img src="assets/brand/logo-badge.png" alt="" /></div>
         <div class="eyebrow centered"><span></span> ACESSO ANTECIPADO <span></span></div>
         <h2>Sua próxima fase na guitarra <em>começa aqui.</em></h2>
         <p>O GuitarQuest está entrando em sua primeira fase pública. Acompanhe o lançamento e seja um dos primeiros a colocar o aprendizado adaptativo à prova.</p>
@@ -165,7 +201,7 @@
   </main>
 
   <footer>
-    <div class="footer-top"><a class="brand" href="#inicio"><span class="brand-mark">♩</span><span>Guitar<span>Quest</span></span></a><p>Aprenda. Pratique. Encontre seu som.</p><a data-instagram-footer href="#" hidden>Instagram ↗</a></div>
+    <div class="footer-top"><a class="brand brand-image footer-brand" href="#inicio"><img src="assets/brand/logo-horizontal.png" alt="GuitarQuest" /></a><p>Aprenda. Pratique. Encontre seu som.</p><a data-instagram-footer href="#" hidden>Instagram ↗</a></div>
     <div class="footer-bottom"><span>© <span data-year></span> GuitarQuest.</span><span>Produto em fase MVP.</span></div>
   </footer>
 

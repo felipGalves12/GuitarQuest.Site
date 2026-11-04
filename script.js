@@ -17,6 +17,62 @@ const observer = new IntersectionObserver(entries => entries.forEach(entry => {
 }), { threshold: .12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+const carousel = document.querySelector('[data-carousel]');
+if (carousel) {
+  const track = carousel.querySelector('[data-carousel-track]');
+  const viewport = carousel.querySelector('[data-carousel-viewport]');
+  const slides = [...carousel.querySelectorAll('.carousel-slide')];
+  const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
+  const title = carousel.querySelector('[data-carousel-title]');
+  const description = carousel.querySelector('[data-carousel-description]');
+  const number = carousel.querySelector('[data-slide-number]');
+  let current = 0, timer, startX = 0;
+
+  const showSlide = (index, userInitiated = false) => {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    slides.forEach((slide, i) => {
+      const active = i === current;
+      slide.classList.toggle('active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+    });
+    dots.forEach((dot, i) => {
+      const active = i === current;
+      dot.classList.toggle('active', active);
+      dot.setAttribute('aria-selected', String(active));
+      dot.tabIndex = active ? 0 : -1;
+    });
+    number.textContent = String(current + 1).padStart(2, '0');
+    title.textContent = slides[current].dataset.title;
+    description.textContent = slides[current].dataset.description;
+    if (userInitiated) restartCarousel();
+  };
+  const restartCarousel = () => {
+    clearInterval(timer);
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => showSlide(current + 1), 7000);
+  };
+
+  carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => showSlide(current - 1, true));
+  carousel.querySelector('[data-carousel-next]').addEventListener('click', () => showSlide(current + 1, true));
+  dots.forEach(dot => dot.addEventListener('click', () => showSlide(Number(dot.dataset.carouselDot), true)));
+  viewport.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); showSlide(current - 1, true); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); showSlide(current + 1, true); }
+  });
+  viewport.addEventListener('pointerdown', event => { startX = event.clientX; });
+  viewport.addEventListener('pointerup', event => {
+    const distance = event.clientX - startX;
+    if (Math.abs(distance) > 55) showSlide(current + (distance < 0 ? 1 : -1), true);
+  });
+  carousel.addEventListener('mouseenter', () => clearInterval(timer));
+  carousel.addEventListener('mouseleave', restartCarousel);
+  carousel.addEventListener('focusin', () => clearInterval(timer));
+  carousel.addEventListener('focusout', restartCarousel);
+  document.addEventListener('visibilitychange', () => document.hidden ? clearInterval(timer) : restartCarousel());
+  showSlide(0);
+  restartCarousel();
+}
+
 const demoStates = [
   { badge: 'CONTEÚDO ATUAL', title: 'Quais notas formam o acorde de C maior?', mastery: 72, note: 'Bom progresso. Uma revisão será agendada.' },
   { badge: 'ANÁLISE DE APRENDIZADO', title: 'Precisão, tempo e erros recentes entram no cálculo.', mastery: 58, note: 'A habilidade precisa de mais contato.' },

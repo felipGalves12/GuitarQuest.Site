@@ -25,6 +25,7 @@ Enquanto os endereços estiverem vazios, o site exibe apenas chamadas honestas d
 
 - `index.html`: conteúdo e estrutura semântica;
 - `styles.css`: identidade visual e responsividade;
-- `script.js`: menu, animações, demonstração interativa e FAQ;
+- `script.js`: menu, animações, carrossel acessível, demonstração interativa e FAQ;
 - `site.config.js`: URLs públicas centralizadas;
-- `assets/`: identidade visual.
+- `assets/brand/`: identidade visual oficial do GuitarQuest;
+- `assets/screens/`: telas reais usadas no carrossel do produto.
