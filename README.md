@@ -12,14 +12,20 @@ python -m http.server 4173
 
 Abra `http://127.0.0.1:4173`.
 
-## Configurar os links públicos
+## Links públicos
 
-Edite `site.config.js` e informe:
+Os endereços públicos ficam centralizados em `site.config.js`:
 
-- `instagramUrl`: perfil oficial do Instagram;
-- `productUrl`: endereço público do MVP.
+- Instagram: `https://www.instagram.com/guitarquest7/`;
+- MVP: `https://app.guitarquest.tech`.
 
-Enquanto os endereços estiverem vazios, o site exibe apenas chamadas honestas de pré-lançamento.
+## Publicar no Coolify
+
+- Build strategy: `Static`;
+- Base Directory: `/`;
+- sem comando de build;
+- domínio principal: `guitarquest.tech`;
+- `www.guitarquest.tech` redirecionando para o domínio principal.
 
 ## Estrutura
 

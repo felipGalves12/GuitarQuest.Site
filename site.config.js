@@ -1,5 +1,4 @@
 window.GUITARQUEST_SITE = {
-  // Preencha quando os endereços públicos estiverem disponíveis.
-  instagramUrl: "",
-  productUrl: ""
+  instagramUrl: "https://www.instagram.com/guitarquest7/",
+  productUrl: "https://app.guitarquest.tech"
 };

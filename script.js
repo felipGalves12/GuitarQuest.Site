@@ -101,8 +101,10 @@ if (config.instagramUrl) {
   document.querySelectorAll('[data-instagram-link], [data-instagram-footer]').forEach(link => {
     link.hidden = false; link.href = config.instagramUrl; link.target = '_blank'; link.rel = 'noopener';
   });
-  document.querySelector('[data-access-note]').textContent = 'Acompanhe os bastidores, conteúdos e a abertura dos primeiros acessos.';
 }
+if (config.productUrl && config.instagramUrl) document.querySelector('[data-access-note]').textContent = 'Teste o MVP e acompanhe conteúdos, bastidores e as próximas evoluções.';
+else if (config.productUrl) document.querySelector('[data-access-note]').textContent = 'O MVP já está disponível em acesso antecipado.';
+else if (config.instagramUrl) document.querySelector('[data-access-note]').textContent = 'Acompanhe conteúdos, bastidores e a abertura dos próximos acessos.';
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
 document.querySelectorAll('details').forEach(detail => detail.addEventListener('toggle', () => {
