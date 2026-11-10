@@ -96,7 +96,13 @@ document.querySelectorAll('[data-step]').forEach(button => button.addEventListen
 if (config.productUrl) {
   const product = document.querySelector('[data-product-link]');
   product.href = config.productUrl; product.target = '_blank'; product.rel = 'noopener'; product.firstChild.textContent = 'Testar o MVP ';
+  document.querySelectorAll('[data-plan-link]').forEach(link => {
+    const url = new URL(config.productUrl);
+    url.searchParams.set('plan', link.dataset.planLink);
+    link.href = url.toString();
+  });
 }
+if (config.proPrice) document.querySelector('[data-pro-price]').textContent = config.proPrice;
 if (config.instagramUrl) {
   document.querySelectorAll('[data-instagram-link], [data-instagram-footer]').forEach(link => {
     link.hidden = false; link.href = config.instagramUrl; link.target = '_blank'; link.rel = 'noopener';

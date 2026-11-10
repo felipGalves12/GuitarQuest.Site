@@ -18,6 +18,7 @@ Os endereços públicos ficam centralizados em `site.config.js`:
 
 - Instagram: `https://www.instagram.com/guitarquest7/`;
 - MVP: `https://app.guitarquest.tech`.
+- preço público do Pro: `R$ 29,90` (deve acompanhar o valor cadastrado no app e na Stripe).
 
 ## Publicar no Coolify
 
@@ -31,6 +32,7 @@ Os endereços públicos ficam centralizados em `site.config.js`:
 
 - `index.html`: conteúdo e estrutura semântica;
 - `styles.css`: identidade visual e responsividade;
+- `pricing.css`: seção responsiva dos planos Free e Pro;
 - `script.js`: menu, animações, carrossel acessível, demonstração interativa e FAQ;
 - `site.config.js`: URLs públicas centralizadas;
 - `assets/brand/`: identidade visual oficial do GuitarQuest;
